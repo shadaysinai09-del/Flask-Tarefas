@@ -7,16 +7,27 @@
 </head>
 
 <body>
+     Aqui fica a lista de Tarefas-
 
-    <h1>Minhas Tarefas</h1>
+     {%  if lista %}
+        <ol>
+          {% for item in lista %}
+              <li>{{ item }}</li>
+             <a href="/delete/{{loop.index0}}"></a><button>🗑️</button>
+          {% endfor %}
+        </ol>
+     {% else %}
+          <p>Não há ítems! Parábens! Você fez tudo das tarefa</p>
+     {% endif %}            
+   
+
+
     <form action="/add" method="POST">
-        <input
-            type="text"
-            name="tarefa"
-            placeholder="Digite uma tarefa"
-            required >
-</body>
-
+        <input type="text" name="tarefa">
         <button type="submit">
             Adicionar
         </button>
+        
+</body>
+
+        
