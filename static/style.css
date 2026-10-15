@@ -1,9 +1,9 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #667eea, #020227);
 
     min-height: 100vh;
 
@@ -12,13 +12,14 @@ body{
     justify-content: center;
     align-items: center;
 
-}
+  }  
+
 
 .container {
     width: 90%;
     max-width: 600px;
 
-    background-color: white;
+    background-color: rgb(194, 194, 169);
 
     padding: 35px;
     border-radius: 20px;
@@ -28,9 +29,15 @@ body{
 
 h1 {
     text-align: center;
-    color: #333;
-
+    color: #060450;
+    font-size: 37px;
     margin-bottom: 30px;
+}
+
+.lixo {
+    background-color: rgb(250, 207, 214);
+    width: auto;
+    border-radius: 45%;
 }
 
 ol {
@@ -38,7 +45,7 @@ ol {
 }
 
 li {
-    background-color: #f5f5ff;
+    background-color: #9c6939;
 
     margin-bottom: 15px;
     padding: 15px;
@@ -57,29 +64,29 @@ li {
 
 li:hover {
     transform: translateY(-2px);
-    background-color: #eeeeff;
+    background-color: #913a08;
 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-button {
+button, input[type="submit"] {
     border: none;
-
-    background-color: #ff5c7a;
-    color: white;
-
-    padding: 8px 12px;
-
-    border-radius: 8px;
-
+    color: rgb(19, 12, 12);
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-size: 16px;
     cursor: pointer;
-
-    font-size: 14px;
-
     transition: 0.2s;
 }
 
-button:hover {
+li a button {
+    background-color: #ff5c7a;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+li a button:hover {
     background-color: #e84363;
     transform: scale(1.05);
 }
@@ -96,7 +103,7 @@ input[type="text"] {
 
     padding: 13px;
 
-    border: 2px solid #ddd;
+    border: 2px solid #961313;
 
     border-radius: 10px;
 
@@ -106,30 +113,16 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-color: #667eea;
+    border-color: #070d29;
 
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
-input[type="submit"] {
-    border: none;
-
-    background-color: #667eea;
-    color: white;
-
-    padding: 13px 20px;
-
-    border-radius: 10px;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
+form button[type="submit"] {
+    background-color: #cc8dcc;
 }
 
-input[type="submit"]:hover {
-    background-color: #5568d8;
-
+form button[type="submit"]:hover {
+    background-color: #070f3b;
     transform: scale(1.03);
 }

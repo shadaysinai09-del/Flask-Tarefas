@@ -16,16 +16,19 @@ def add():
     nome_tarefas = request.form["tarefa"]
     tarefas = session.get("lista", [])
     tarefas.append(nome_tarefas)
-    session["tarefas"] = tarefas
+    session["lista"] = tarefas
+    session.modified = True
     return redirect(url_for("index"))
 
-@app.route("/delete/<int:indice>")
-def delete(indice):
-    tarefas = session.get("tarefas", [])
-    tarefas.pop(indice)
-    session["tarefas"] = tarefas
-
-    return redirect(url_for("index"))      
-
+@app.route("/delete/<int:index>")
+def delete(index):
+    lista = session.get('lista', [])
+    
+    if 0 <= index < len(lista):
+        lista.pop(index)
+        session['lista'] = lista
+        session.modified = True
+        
+    return redirect(url_for("index"))
 if __name__ == "__main__":
     app.run(debug=True)    

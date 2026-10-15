@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <title>Minhas Tarefas</title>
 
-    <link rel=""stylesheet" href="'{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
      
-    <div class="container">
-     Aqui fica a lista de Tarefas-
+  <div class="container">
+     <h1>Aqui fica a lista de Tarefas</h1>
 
-     {%  if lista %}
+        {% if lista %}   
+
         <ol>
           {% for item in lista %}
               <li>{{ item }}</li>
-             <a href="/delete/{{loop.index0}}"><button>🗑️</button></a>
+             <a class="btn-deletar" href="/delete/{{ loop.index0 }}">🗑️</a>
           {% endfor %}
         </ol>
-     {% else %}
-          <p>Não há ítems! Parábens! Você fez tudo das tarefa</p>
-     {% endif %}            
+        {% else %}
+          <p>Não há ítems! Parabéns! Você fez todas as tarefa</p>
+         {% endif %}            
    
 
 
@@ -31,7 +32,11 @@
         <button type="submit">
             Adicionar
         </button>
+    </form>
+   </div>
         
 </body>
+
+</html>
 
         
